@@ -13,3 +13,4 @@ C:\Users\damha\Downloads\ProjectMangeStudent\ProjectMangeStudent\obj\Debug\net8.
 C:\Users\damha\Downloads\ProjectMangeStudent\ProjectMangeStudent\obj\Debug\net8.0\ProjectMangeStudent.genruntimeconfig.cache
 C:\Users\damha\Downloads\ProjectMangeStudent\ProjectMangeStudent\obj\Debug\net8.0\ref\ProjectMangeStudent.dll
 C:\Users\damha\Downloads\ProjectMangeStudent\ProjectMangeStudent\bin\Debug\net8.0\students.json
+C:\Users\damha\Downloads\ProjectMangeStudent\ProjectMangeStudent\obj\Debug\net8.0\ProjectMangeStudent.sourcelink.json

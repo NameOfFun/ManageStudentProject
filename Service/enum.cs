@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectMangeStudent.Service
 {
-    public enum AcademicPerformance
+    public enum @enum
     {
         Poor,
         Weak,

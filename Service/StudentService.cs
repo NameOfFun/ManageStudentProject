@@ -75,21 +75,29 @@ namespace ProjectMangeStudent.Service
             SaveFile();
         }
 
-        public void ReadStudent()
+        public bool checkNullListStudent()
         {
-            if(listStudents == null || !listStudents.Any())
+            if (listStudents == null || !listStudents.Any())
             {
                 Console.WriteLine("List Student dosen't have information!!!");
                 Console.WriteLine();
+                return false;
             }
-            else
+            return true;
+        }
+        public void ReadStudent()
+        {
+            if(!checkNullListStudent())
             {
-                Console.WriteLine("List information Student: ");
-                foreach (Student student in listStudents)
-                {
-                    Console.WriteLine(student + $" Academic Performance: {student.Performance}");
-                }
+                return;
             }
+            
+            Console.WriteLine("List information Student: ");
+            foreach (Student student in listStudents)
+            {
+               Console.WriteLine(student + $" Academic Performance: {student.Performance}");
+            }
+            
             SaveFile();
         }
 
@@ -174,9 +182,8 @@ namespace ProjectMangeStudent.Service
 
         public void DisplayPerformace()
         {
-            if (listStudents == null || !listStudents.Any())
+            if (!checkNullListStudent())
             {
-                Console.WriteLine("No student in here");
                 return;
             }
 
@@ -201,7 +208,10 @@ namespace ProjectMangeStudent.Service
 
         public void DisplayAverageScorePercentages()
         {
-            if (listStudents == null || !listStudents.Any()) { Console.WriteLine("No student in here");  return; }
+            if (!checkNullListStudent())
+            {
+                return;
+            }
 
             Dictionary<double, int> averageScore = new Dictionary<double, int>();
             foreach (var student in listStudents)
@@ -229,12 +239,15 @@ namespace ProjectMangeStudent.Service
 
         public void PrintStudentByPerformance()
         {
-            if (listStudents == null || !listStudents.Any()) { Console.WriteLine("No student in here"); return; }
+            if (!checkNullListStudent())
+            {
+                return;
+            }
             Console.WriteLine("Enter the academic performance you want to search for (Poor, Weak, Average, Good, Excellent, Outstanding): ");
 
             string? input = Console.ReadLine();
 
-            if (Enum.TryParse(input, true, out AcademicPerformance performance))
+            if (Enum.TryParse(input, true, out @enum performance))
             {
                 var filteredStudent = listStudents.Where(s => s.Performance == performance).ToList();
 

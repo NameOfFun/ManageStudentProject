@@ -14,7 +14,7 @@ namespace ProjectMangeStudent.Enitities
         public string _school;
         public int _startDate;
         public double _average;
-        public AcademicPerformance Performance { get; set; }
+        public @enum Performance { get; set; }
 
 
         public Student()
@@ -66,17 +66,17 @@ namespace ProjectMangeStudent.Enitities
         public void UpdatePerformance()
         {
             if (Average < 3)
-                Performance = AcademicPerformance.Poor;
+                Performance = @enum.Poor;
             else if (Average < 5)
-                Performance = AcademicPerformance.Weak;
+                Performance = @enum.Weak;
             else if (Average < 6.5)
-                Performance = AcademicPerformance.Average;
+                Performance = @enum.Average;
             else if(Average < 7.5)
-                Performance = AcademicPerformance.Good;
+                Performance = @enum.Good;
             else if(Average < 9)
-                Performance = AcademicPerformance.Excellent;
+                Performance = @enum.Excellent;
             else 
-                Performance = AcademicPerformance.Outstanding;
+                Performance = @enum.Outstanding;
         }
     }
 }
